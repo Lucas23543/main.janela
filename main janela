@@ -1,0 +1,19 @@
+from PySide6.QtWidgets import (QApplication, QMainWindow, QCheckBox)
+from PySide6.QtCore import Qt
+import sys
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super(MainWindow, self).__init__()
+
+        self.setWindowTitle("Janela CheckBox")
+
+        #Criando Um Objeto Para Criar O Botão
+        ok = QCheckBox("Marque Aqui A Opção")
+        ok.setCheckState(Qt.Checked)
+        self.setCentralWidget(ok)
+
+app = QApplication(sys.argv)
+window = MainWindow()
+window.show()
+app.exec()
